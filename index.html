@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to <strong class="logo">Fahad's</strong> Website</h1>
+    <div class="keys">
+      <div class="key">clap</div>
+      <div class="key">hihat</div>
+      <div class="key">kick</div>
+      <div class="key">openhat</div>
+      <div class="key">boom</div>
+      <div class="key">ride</div>
+      <div class="key">snare</div>
+      <div class="key">tom</div>
+      <div class="key">tink</div>
+    </div>
+    
+    
+
+    <script>
+        var len = document.querySelectorAll(".key").length;
+        for (var i = 0; i < len; i += 1) {
+            document.querySelectorAll(".key")[i].addEventListener("click", function () {
+              var test = this.innerHTML;
+              console.log(test);
+              myaudio(test);
+            })
+        }
+        function myaudio(test) {
+            switch (test) {
+                    default:
+                        var audio = new Audio ("sounds/" + test + ".wav");
+                        audio.play(); 
+                        break;
+                }
+        }
+    </script>
+</body>
+</html>
